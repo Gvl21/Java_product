@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class Product {
-    private String name;
-    private double price;
-    private String description;
+    private String[] name;
+    private double[] price;
+    private String[] description;
     Scanner scn = new Scanner(System.in);
 
 
@@ -11,9 +11,12 @@ public class Product {
 
 
     public Product(String name, double price, String description) {
-        this.name = name;
-        this.price = price;
-        this.description = description;
+        for (int i = 0; i < name.length() ; i++) {
+            if(this.name[i] != null && this.price[i] != 0 && this.description[i] != null)
+            this.name[i] = name;
+            this.price[i] = price;
+            this.description[i] = description;
+        }
     }
 
 
@@ -21,15 +24,15 @@ public class Product {
         System.out.println("입고한 제품명을 입력하라");
         String productName = scn.nextLine();
         System.out.println("제품의 가격을 입력하라");
-        String productName = scn.nextLine();
+        String productPrice = scn.nextLine();
         System.out.println("해당 제품의 간략한 설명");
-        String productName = scn.nextLine();
+        String productDesc = scn.nextLine();
 
     }
 
 
-    public String getName() {
-        return name;
+    public String getName(i){
+        return name[i];
     }
 
     public void setName(String name) {
